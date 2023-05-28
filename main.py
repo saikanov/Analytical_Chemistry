@@ -124,9 +124,9 @@ if X is not None and y is not None:
     if not X.empty and not y.empty:
         #Linear Regression
         linreg = scipy.stats.linregress(X, y)
-        r_value = linreg.rvalue
-        slope = linreg.slope
-        intercept = linreg.intercept
+        r_value = linreg.rvalue.round(4)
+        slope = linreg.slope.round(4)
+        intercept = linreg.intercept.round(4)
         #Mencari y_topi
         if slope is not None and intercept is not None:
             x = df_d['Konsentrasi']
@@ -181,6 +181,7 @@ with tab1:
             st.text(f'Intercept = {intercept}')
             st.text(f'Slope = {slope}')
             st.text(f'r = {r_value}')
+            st.text(f'r² = {r_value**2}')
 with tab2:
     if df_s is not None:
         df_s = df_s.applymap(lambda x: '{0:.4f}'.format(x) if isinstance(x, (int, float)) else x)
