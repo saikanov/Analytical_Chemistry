@@ -43,16 +43,16 @@ df_s = None
 st.subheader('Input Deret')
 col1,col2 = st.columns([2,2])
 with col1:
-    data_x = st.text_input("Masukkan Deret Konsentrasi (Pisahkan dengan koma):")
+    data_x = st.text_input("Masukkan Deret Konsentrasi (Pisahkan dengan garis miring (/)) :")
 with col2:
-    data_y = st.text_input("Masukkan Deret Absorbansi (Pisahkan dengan koma):")
+    data_y = st.text_input("Masukkan Deret Absorbansi (Pisahkan dengan garis miring (/)) :")
 
 valid_input = True
 # Cek apakah input kosong atau tidak
 if data_x.strip() and data_y.strip():
     try:
-        data_x = list(map(float, data_x.split(',')))
-        data_y = list(map(float, data_y.split(',')))
+        data_x = list(map(float, data_x.split('/')))
+        data_y = list(map(float, data_y.split('/')))
         if not all(isinstance(i, (int, float)) for i in data_x) or not all(isinstance(i, (int, float)) for i in data_y):
             valid_input = False
     except ValueError:
@@ -68,7 +68,7 @@ if valid_input:
 
 
 if df_d is None:
-    st.write('Error:Tolong Masukkan dengan format yang benar! Input harus Angka dan dipisahkan dengan koma (,) bukan titik (.)')
+    st.write('Error:Tolong Masukkan dengan format yang benar! Input harus Angka dan dipisahkan dengan garis miring (/) ex:  0.01 / 0.02')
 
 st.markdown("---")
 
@@ -78,12 +78,12 @@ st.subheader('Input Sample')
 col3,col4 = st.columns([3,2])
 
 with col3:
-    data_s = st.text_input("Masukkan Absorbansi dari sampel (pisahkan dengan koma): ")
+    data_s = st.text_input("Masukkan Absorbansi dari sampel (pisahkan dengan garis miring (/)): ")
 
 validd_input = True
 if data_s.strip():
     try:
-        data_s = list(map(float, data_s.split(',')))
+        data_s = list(map(float, data_s.split('/')))
         if not all(isinstance(i, (int, float)) for i in data_s):
             validd_input = False
     except ValueError:
@@ -98,7 +98,7 @@ if validd_input:
     df_s = pd.DataFrame(data)
 
 if df_s is None:
-    st.write('Error:Tolong Masukkan dengan format yang benar! Input harus Angka dan dipisahkan dengan koma (,) bukan titik (.)')
+    st.write('Error:Tolong Masukkan dengan format yang benar! Input harus Angka dan dipisahkan dengan garis miring (/) ex:  0.01 / 0.02')
 
 #mengambil nilai dari dataframe
 if df_d is not None:
