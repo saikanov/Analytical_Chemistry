@@ -167,7 +167,7 @@ if choice == 'External Standard':
                 with col5:
                     FP = st.number_input('Masukkan FP:',min_value=1,value=1,step=1)
                 with col6:
-                    v_lt = st.number_input('Masukkan volume Labu Takar(Liter):')
+                    v_lt = st.number_input('Masukkan volume Labu Takar(mL):')
                 with col7:
                     bobot_S = st.number_input('Masukkan Bobot Sample(gram):')
                 cons = sample_S(c_terukur, v_lt, FP, bobot_S)
