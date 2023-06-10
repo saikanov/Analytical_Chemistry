@@ -284,7 +284,7 @@ if choice == 'Internal Standard':
                 st.write("Input tidak valid, silakan coba lagi.")
 
         try:
-            A_sample = st.number_input('Masukkan Area dari Sample:')
+            A_sample = st.number_input('Masukkan Area dari Sample:',format="%.4f")
         except ValueError:
             st.write("Input tidak valid, silakan coba lagi.")
 
