@@ -169,7 +169,7 @@ if choice == 'External Standard':
                 with col6:
                     v_lt = st.number_input('Masukkan volume Labu Takar(mL):')
                 with col7:
-                    bobot_S = st.number_input('Masukkan Bobot Sample(gram):',step=0.0001)
+                    bobot_S = st.number_input('Masukkan Bobot Sample(gram):',step=0.0001,format="%.4f")
                 cons = sample_S(c_terukur, v_lt, FP, bobot_S)
                 df_s['Konsentrasi Sebenarnya'] = cons
             elif sampel_type == "Liquid":
