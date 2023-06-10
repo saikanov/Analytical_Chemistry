@@ -40,7 +40,7 @@ if choice == 'External Standard':
         return ct
     #fungsi sampel solid
     def sample_S(c_terukur,v_lt,FP,bobot_S):
-        ss = ((c_terukur*v_lt*FP)/bobot_S)
+        ss = ((c_terukur*v_lt*FP*0.001)/(bobot_S*0.001))
         return ss
     #fungsi perhitungan sampel liquid
     def sampel_L(c_terukur,FP_l):
