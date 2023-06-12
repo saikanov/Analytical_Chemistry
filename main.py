@@ -199,6 +199,7 @@ if choice == 'External Standard':
                 st.text(f'Intercept = {intercept}')
                 st.text(f'Slope = {slope}')
                 st.text(f'r = {r_value}')
+                st.text(f'r² = {r_value**2}')
     with tab2:
         if df_s is not None:
             df_s = df_s.applymap(lambda x: '{0:.4f}'.format(x) if isinstance(x, (int, float)) else x)
